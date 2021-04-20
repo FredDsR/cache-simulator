@@ -33,7 +33,11 @@ O arquivo de configuração tem a seguinte estrutura:
             "assoc": "1",
             "repl": "l"
         },
-        "dl2": null
+        "dl2": null,
+        "benchmarks": [
+            "Benchmarks/gcc/cc1.ss",
+            "Benchmarks/gcc/gcc.i"
+        ]
     },
     { # Second simulation
         "il1": {
@@ -49,7 +53,11 @@ O arquivo de configuração tem a seguinte estrutura:
             "assoc": "1",
             "repl": "l"
         },
-        "dl2": null
+        "dl2": null,
+        "benchmarks": [
+            "Benchmarks/gcc/cc1.ss",
+            "Benchmarks/gcc/gcc.i"
+        ]
     }
 ]
 ```
@@ -68,7 +76,11 @@ Caso queira utilizar uma cache com algum nível unificado basta utilizar a segui
             "repl": "l"
         },
         "il2": null,
-        "dl2": null
+        "dl2": null,
+        "benchmarks": [
+            "Benchmarks/gcc/cc1.ss",
+            "Benchmarks/gcc/gcc.i"
+        ]
     },
     { # Second simulation
         "ul1": {
@@ -78,10 +90,16 @@ Caso queira utilizar uma cache com algum nível unificado basta utilizar a segui
             "repl": "l"
         },
         "il2": null,
-        "dl2": null
+        "dl2": null,
+        "benchmarks": [
+            "Benchmarks/gcc/cc1.ss",
+            "Benchmarks/gcc/gcc.i"
+        ]
     }
 ]
 ```
+
+**Importante: A lista benchmarks em cada simulação deve seguir a ordem que seria utilizada na execução do programa *sim-cache* na linha de comando**
 
 ## Saída experada
 
