@@ -1,0 +1,34 @@
+[
+    {
+        "il1": {
+            "nsets": "64",
+            "bsize": "64",
+            "assoc": "1",
+            "repl": "l"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "64",
+            "bsize": "64",
+            "assoc": "1",
+            "repl": "l"
+        },
+        "dl2": null
+    },
+    {
+        "il1": {
+            "nsets": "32",
+            "bsize": "32",
+            "assoc": "1",
+            "repl": "l"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "32",
+            "bsize": "32",
+            "assoc": "1",
+            "repl": "l"
+        },
+        "dl2": null
+    }
+]
