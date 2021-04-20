@@ -88,9 +88,9 @@ Caso queira utilizar uma cache com algum nível unificado basta utilizar a segui
 Para o primeiro exemplo de experimento, a saída esperada é um arquivo *.csv* que deve seguir este padrão:
 
 ```
-type, nsets, bsize, assoc, repl, benchmark,    accesses, hits,     misses,  replacements, writebacks, invalidations, miss_rate, repl_rate,wb_rate,inv_rate,label
-il1,  64,    64,    1,     l,    cc1.ss_gcc.i, 45397813, 41158668, 4239145, 4239081,      0,          0,             0.0934,    0.0934,0.0000,0.0000,simulation_0
-dl1,  64,    64,    1,     l,    cc1.ss_gcc.i, 16934051, 15625167, 1308884, 1308820,      463272,     0,             0.0773,    0.0773,0.0274,0.0000,simulation_0
-il1,  32,    32,    1,     l,    cc1.ss_gcc.i, 45397813, 36511502, 8886311, 8886279,      0,          0,             0.1957,    0.1957,0.0000,0.0000,simulation_1
-dl1,  32,    32,    1,     l,    cc1.ss_gcc.i, 16934051, 14005642, 2928409, 2928377,      1194355,    0,             0.1729,    0.1729,0.0705,0.0000,simulation_1
+type, nsets, bsize, assoc, repl, benchmark,    accesses, hits,     misses,  replacements, writebacks, invalidations, miss_rate, repl_rate, wb_rate, inv_rate, label
+il1,  64,    64,    1,     l,    cc1.ss_gcc.i, 45397813, 41158668, 4239145, 4239081,      0,          0,             0.0934,    0.0934,    0.0000,  0.0000,   simulation_0
+dl1,  64,    64,    1,     l,    cc1.ss_gcc.i, 16934051, 15625167, 1308884, 1308820,      463272,     0,             0.0773,    0.0773,    0.0274,  0.0000,   simulation_0
+il1,  32,    32,    1,     l,    cc1.ss_gcc.i, 45397813, 36511502, 8886311, 8886279,      0,          0,             0.1957,    0.1957,    0.0000,  0.0000,   simulation_1
+dl1,  32,    32,    1,     l,    cc1.ss_gcc.i, 16934051, 14005642, 2928409, 2928377,      1194355,    0,             0.1729,    0.1729,    0.0705,  0.0000,   simulation_1
 ```
