@@ -35,7 +35,7 @@ O arquivo de configuração tem a seguinte estrutura:
         },
         "dl2": null
     },
-    { Second simulation
+    { # Second simulation
         "il1": {
             "nsets": "32",
             "bsize": "32",
