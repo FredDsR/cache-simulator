@@ -1,18 +1,12 @@
 [
     {
-        "il1": {
-            "nsets": "64",
+        "ul1": {
+            "nsets": "128",
             "bsize": "64",
             "assoc": "1",
             "repl": "l"
         },
         "il2": null,
-        "dl1": {
-            "nsets": "64",
-            "bsize": "64",
-            "assoc": "1",
-            "repl": "l"
-        },
         "dl2": null,
         "benchmarks": [
             "Benchmarks/gcc/cc1.ss",
@@ -20,19 +14,13 @@
         ]
     },
     {
-        "il1": {
-            "nsets": "32",
+        "ul1": {
+            "nsets": "64",
             "bsize": "32",
             "assoc": "1",
             "repl": "l"
         },
         "il2": null,
-        "dl1": {
-            "nsets": "32",
-            "bsize": "32",
-            "assoc": "1",
-            "repl": "l"
-        },
         "dl2": null,
         "benchmarks": [
             "Benchmarks/gcc/cc1.ss",

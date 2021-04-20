@@ -1,7 +1,9 @@
 import subprocess, os, json
 import pandas as pd
 
-PATH = os.getenv('HOME') + '/simplesim-3.0'
+ABS_PATH = os.path.abspath(os.path.dirname(""))
+CONFIG_PATH = ABS_PATH + '/experiments'
+SIMCACHE_PATH = os.getenv('HOME') + '/simplesim-3.0'
 
 def clean_stats(raw_stats: str) -> dict:
     stats_title = 'sim: ** simulation statistics **'
@@ -24,6 +26,11 @@ def clean_stats(raw_stats: str) -> dict:
 
 def get_stats(stats: dict, config: dict) -> pd.DataFrame:
     new_dict = {'type': [],
+                'nsets': [],
+                'bsize': [],
+                'assoc': [],
+                'repl': [],
+                'benchmark': [],
                 'accesses': [],
                 'hits': [],
                 'misses': [],
@@ -33,11 +40,7 @@ def get_stats(stats: dict, config: dict) -> pd.DataFrame:
                 'miss_rate': [],
                 'repl_rate': [],
                 'wb_rate': [],
-                'inv_rate': [],
-                'nsets': [],
-                'bsize': [],
-                'assoc': [],
-                'repl': []}
+                'inv_rate': []}
 
     types = config.keys()
 
@@ -54,8 +57,10 @@ def get_stats(stats: dict, config: dict) -> pd.DataFrame:
                 new_dict['assoc'].append(config[type]['assoc'])
                 new_dict['repl'].append(config[type]['repl'])
 
-    return pd.DataFrame().from_dict(new_dict)
+                benchmarks = [benchmark.split('/')[-1] for benchmark in config['benchmarks']]                
+                new_dict['benchmark'].append('_'.join(benchmarks))
 
+    return pd.DataFrame().from_dict(new_dict)
 
 def run_simcache(config: dict) -> str:
     
@@ -66,6 +71,8 @@ def run_simcache(config: dict) -> str:
 
     ul1 = []
     ul2 = []
+
+    benchmarks = [f'{SIMCACHE_PATH}/{benchmark}' for benchmark in config['benchmarks']]
 
     if 'ul1' in config.keys():
         ul1.append(f'ul1:{config["ul1"]["nsets"]}:{config["ul1"]["bsize"]}:{config["ul1"]["assoc"]}:{config["ul1"]["repl"]}')
@@ -83,19 +90,15 @@ def run_simcache(config: dict) -> str:
 
     general = [
         '-tlb:itlb', 'none',
-        '-tlb:dtlb','none',
-        f'{PATH}/Benchmarks/gcc/cc1.ss',
-        f'{PATH}/Benchmarks/gcc/gcc.i'
+        '-tlb:dtlb','none'
     ]
 
-    cmd = [f'{PATH}/sim-cache'] + il1 + dl1 + ul1 + il2 + dl2 + ul2 + general
+    cmd = [f'{SIMCACHE_PATH}/sim-cache'] + il1 + dl1 + ul1 + il2 + dl2 + ul2 + general + benchmarks
+
 
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     output, error = proc.communicate()
-
-    # print(output.decode('ascii'))
-    # print(error.decode('ascii'))
 
     return error.decode('ascii')
 
@@ -117,42 +120,31 @@ def run_experiment(config: dict) -> pd.DataFrame:
 
     return experiment_df
 
-def get_experiments_config() -> list:
-    abs_path = os.path.abspath(os.path.dirname(""))
-    config_path = abs_path + '/experiments'
-    config_files = os.listdir(config_path)
-    config_files = [config_path + '/' + config_file for config_file in config_files]
+def get_experiments_config() -> dict:
+    
+    config_files = os.listdir(CONFIG_PATH)
+    abs_config_files = [CONFIG_PATH + '/' + config_file for config_file in config_files]
 
-    experiments_config = []
+    experiments_config = {}
 
-    for config_file in config_files:
+    for i, config_file in enumerate(abs_config_files):
         with open(config_file, 'r', encoding='utf-8') as file:
-            experiments_config.append(json.load(file))
+            experiments_config[config_files[i]] = json.load(file)
 
     return experiments_config
 
 def main() -> None:
     experiments_config = get_experiments_config()
-    
-    for i, experiment_config in enumerate(experiments_config):
-        df = run_experiment(experiment_config)
+
+    for key in experiments_config.keys():
+        
+        df = run_experiment(experiments_config[key])
         
         if 'results' not in os.listdir('./'):
             os.mkdir('./results')
 
-        df.to_csv('./results/experiment_' + str(i), index=False)
+        df.to_csv('./results/' + key.split('.')[0] + '.csv', index=False)
 
 
 if __name__ == "__main__":
     main()
-
-# config_2 = {
-#     'ul1': {
-#         'nsets': '128',
-#         'bsize': '64',
-#         'assoc': '1',
-#         'repl': 'l'
-#     },
-#     'il2': None,
-#     'dl2': None,
-# }
