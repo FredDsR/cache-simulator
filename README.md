@@ -102,7 +102,7 @@ dl1   ,32    ,32    ,1     ,l    ,cc1.ss_gcc.i ,16934051 ,14004609 ,2929442 ,292
 ```
 Onde cada campo significa:
 
-cache
+* **cache**: Identificador do tipo e nível da cache (Ex.: *il1*, *dl1*, etc...);
 
 * **nsets**: Quantidade de conjuntos;
 
