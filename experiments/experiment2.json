@@ -8,10 +8,7 @@
         },
         "il2": null,
         "dl2": null,
-        "benchmarks": [
-            "Benchmarks/gcc/cc1.ss",
-            "Benchmarks/gcc/gcc.i"
-        ]
+        "benchmark": "Benchmarks/go/go.ss 50 9 Benchmarks/go/2stone9.in"
     },
     {
         "ul1": {
@@ -22,9 +19,6 @@
         },
         "il2": null,
         "dl2": null,
-        "benchmarks": [
-            "Benchmarks/gcc/cc1.ss",
-            "Benchmarks/gcc/gcc.i"
-        ]
+        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/gcc.i"
     }
 ]

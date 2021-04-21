@@ -19,7 +19,7 @@ O arquivo de configuração tem a seguinte estrutura:
 
 ```
 [
-    { # First simuation
+    { # First simulation
         "il1": {
             "nsets": "64",
             "bsize": "64",
@@ -34,10 +34,7 @@ O arquivo de configuração tem a seguinte estrutura:
             "repl": "l"
         },
         "dl2": null,
-        "benchmarks": [
-            "Benchmarks/gcc/cc1.ss",
-            "Benchmarks/gcc/gcc.i"
-        ]
+        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/gcc.i"
     },
     { # Second simulation
         "il1": {
@@ -54,10 +51,7 @@ O arquivo de configuração tem a seguinte estrutura:
             "repl": "l"
         },
         "dl2": null,
-        "benchmarks": [
-            "Benchmarks/gcc/cc1.ss",
-            "Benchmarks/gcc/gcc.i"
-        ]
+        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/gcc.i"
     }
 ]
 ```
@@ -77,10 +71,7 @@ Caso queira utilizar uma cache com algum nível unificado basta utilizar a segui
         },
         "il2": null,
         "dl2": null,
-        "benchmarks": [
-            "Benchmarks/gcc/cc1.ss",
-            "Benchmarks/gcc/gcc.i"
-        ]
+        "benchmark": "Benchmarks/go/go.ss 50 9 Benchmarks/go/2stone9.in"
     },
     { # Second simulation
         "ul1": {
@@ -91,15 +82,12 @@ Caso queira utilizar uma cache com algum nível unificado basta utilizar a segui
         },
         "il2": null,
         "dl2": null,
-        "benchmarks": [
-            "Benchmarks/gcc/cc1.ss",
-            "Benchmarks/gcc/gcc.i"
-        ]
+        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/gcc.i"
     }
 ]
 ```
 
-**Importante: A lista benchmarks em cada simulação deve seguir a ordem que seria utilizada na execução do programa *sim-cache* na linha de comando**
+**Importante: Perceba que no segundo exemplo de configuração são utilizados dois benchmarks diferentes, isso pode ser feito sem problemas pois seá expecificado o benchmark utilizado na simulação. Porém, é importante os arquivos utilizados no benchmark estarem na pasta raiz do programa *sim-cache***
 
 ## Saída experada
 

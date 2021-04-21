@@ -14,10 +14,7 @@
             "repl": "l"
         },
         "dl2": null,
-        "benchmarks": [
-            "Benchmarks/gcc/cc1.ss",
-            "Benchmarks/gcc/gcc.i"
-        ]
+        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/gcc.i"
     },
     {
         "il1": {
@@ -34,9 +31,6 @@
             "repl": "l"
         },
         "dl2": null,
-        "benchmarks": [
-            "Benchmarks/gcc/cc1.ss",
-            "Benchmarks/gcc/gcc.i"
-        ]
+        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/gcc.i"
     }
 ]

@@ -1,9 +1,11 @@
-import subprocess, os, json
+import subprocess, os, json, sys, re
 import pandas as pd
 
 ABS_PATH = os.path.abspath(os.path.dirname(""))
 CONFIG_PATH = ABS_PATH + '/experiments'
 SIMCACHE_PATH = os.getenv('HOME') + '/simplesim-3.0'
+
+sys.path.append(SIMCACHE_PATH)
 
 def clean_stats(raw_stats: str) -> dict:
     stats_title = 'sim: ** simulation statistics **'
@@ -44,6 +46,8 @@ def get_stats(stats: dict, config: dict) -> pd.DataFrame:
 
     types = config.keys()
 
+    file_pattern = r'[^-]+.\.+.'
+    
     for key in stats.keys():
         splited_key = key.split('.')
         type = splited_key[0]
@@ -57,8 +61,11 @@ def get_stats(stats: dict, config: dict) -> pd.DataFrame:
                 new_dict['assoc'].append(config[type]['assoc'])
                 new_dict['repl'].append(config[type]['repl'])
 
-                benchmarks = [benchmark.split('/')[-1] for benchmark in config['benchmarks']]                
-                new_dict['benchmark'].append('_'.join(benchmarks))
+                benchmark_files = [benchmark.split('/')[-1] 
+                                   for benchmark in config['benchmark'].split(' ') 
+                                   if re.match(file_pattern, benchmark)]  
+
+                new_dict['benchmark'].append('_'.join(benchmark_files))
 
     return pd.DataFrame().from_dict(new_dict)
 
@@ -72,7 +79,18 @@ def run_simcache(config: dict) -> str:
     ul1 = []
     ul2 = []
 
-    benchmarks = [f'{SIMCACHE_PATH}/{benchmark}' for benchmark in config['benchmarks']]
+    benchmark = []
+
+    benchmark_args = config['benchmark'].split(' ')
+
+    file_pattern = r'[^-]+.+\..+'
+
+    for arg in benchmark_args:
+        if re.match(file_pattern, arg):
+            benchmark.append(f'{SIMCACHE_PATH}/{arg}')
+        else:
+            benchmark.append(arg)
+
 
     if 'ul1' in config.keys():
         ul1.append(f'ul1:{config["ul1"]["nsets"]}:{config["ul1"]["bsize"]}:{config["ul1"]["assoc"]}:{config["ul1"]["repl"]}')
@@ -93,8 +111,10 @@ def run_simcache(config: dict) -> str:
         '-tlb:dtlb','none'
     ]
 
-    cmd = [f'{SIMCACHE_PATH}/sim-cache'] + il1 + dl1 + ul1 + il2 + dl2 + ul2 + general + benchmarks
+    cmd = [f'{SIMCACHE_PATH}/sim-cache'] + il1 + dl1 + ul1 + il2 + dl2 + ul2 + general + benchmark
 
+    print('Command executed:')
+    print(' '.join(cmd))
 
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
