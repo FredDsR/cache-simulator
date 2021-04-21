@@ -42,7 +42,7 @@
             "repl": "l"
         },
         "dl2": null,
-        "benchmark": "Benchmarks/go/go.ss Benchmarks/go/2stone9.in"
+        "benchmark": "Benchmarks/go/go.ss 50 9 Benchmarks/go/2stone9.in"
     },
     {
         "ul1": {
@@ -53,6 +53,6 @@
         },
         "il2": null,
         "dl2": null,
-        "benchmark": "Benchmarks/go/go.ss Benchmarks/go/2stone9.in"
+        "benchmark": "Benchmarks/go/go.ss 50 9 Benchmarks/go/2stone9.in"
     }
 ]

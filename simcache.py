@@ -123,7 +123,7 @@ def run_simcache(config: dict) -> str:
 
     cmd = [f'{SIMCACHE_PATH}/sim-cache'] + il1 + dl1 + ul1 + il2 + dl2 + ul2 + general + benchmark
 
-    print('Command executed:')
+    print('-> Command executed:')
     print(' '.join(cmd))
 
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -144,7 +144,7 @@ def run_experiment(config: dict) -> pd.DataFrame:
     experiment_df = pd.DataFrame()
 
     for i, simulation_config in enumerate(config):
-        print(f'Running simulation {i}')
+        print(f'-> Running simulation {i}')
         simulation_df = run_simulation(simulation_config)
         simulation_df['label'] = 'simulation_' + str(i)
         experiment_df = pd.concat([experiment_df, simulation_df])
@@ -162,7 +162,7 @@ def get_experiments_config() -> dict:
 
     for i, config_file in enumerate(abs_config_files):
         if re.match(json_pattern, config_file):
-            print(f'Reading file: {config_file}')
+            print(f'-> Reading file: {config_file}')
             with open(config_file, 'r', encoding='utf-8') as file:
                 experiments_config[config_files[i]] = json.load(file)
 
@@ -173,7 +173,7 @@ def main() -> None:
 
     for key in experiments_config.keys():
         
-        print(f'Running experiment {key}')
+        print(f'-> Running experiment {key}')
 
         df = run_experiment(experiments_config[key])
         

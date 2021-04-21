@@ -72,7 +72,7 @@
             "assoc": "2048",
             "repl": "l"
         },
-        "benchmark": "Benchmarks/go/go.ss Benchmarks/go/2stone9.in"
+        "benchmark": "Benchmarks/go/go.ss 50 9 Benchmarks/go/2stone9.in"
     },
     {
         "il1": {
@@ -93,6 +93,6 @@
             "assoc": "4096",
             "repl": "l"
         },
-        "benchmark": "Benchmarks/go/go.ss Benchmarks/go/2stone9.in"
+        "benchmark": "Benchmarks/go/go.ss 50 9 Benchmarks/go/2stone9.in"
     }
 ]
