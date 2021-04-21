@@ -1,0 +1,98 @@
+[
+    {
+        "il1": {
+            "nsets": "1",
+            "bsize": "16",
+            "assoc": "512",
+            "repl": "l"
+        },
+        "il2": {
+            "nsets": "1",
+            "bsize": "64",
+            "assoc": "2048",
+            "repl": "l"
+        },
+        "dl1": {
+            "nsets": "1",
+            "bsize": "16",
+            "assoc": "512",
+            "repl": "l"
+        },
+        "dl2": {
+            "nsets": "1",
+            "bsize": "64",
+            "assoc": "2048",
+            "repl": "l"
+        },
+        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/jump.i"
+    },
+    {
+        "il1": {
+            "nsets": "1",
+            "bsize": "16",
+            "assoc": "512",
+            "repl": "l"
+        },
+        "dl1": {
+            "nsets": "1",
+            "bsize": "16",
+            "assoc": "512",
+            "repl": "l"
+        },
+        "ul2": {
+            "nsets": "1",
+            "bsize": "128",
+            "assoc": "4096",
+            "repl": "l"
+        },
+        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/jump.i"
+    },
+    {
+        "il1": {
+            "nsets": "1",
+            "bsize": "16",
+            "assoc": "512",
+            "repl": "l"
+        },
+        "il2": {
+            "nsets": "1",
+            "bsize": "64",
+            "assoc": "2048",
+            "repl": "l"
+        },
+        "dl1": {
+            "nsets": "1",
+            "bsize": "16",
+            "assoc": "512",
+            "repl": "l"
+        },
+        "dl2": {
+            "nsets": "1",
+            "bsize": "64",
+            "assoc": "2048",
+            "repl": "l"
+        },
+        "benchmark": "Benchmarks/go/go.ss Benchmarks/go/2stone9.in"
+    },
+    {
+        "il1": {
+            "nsets": "1",
+            "bsize": "16",
+            "assoc": "512",
+            "repl": "l"
+        },
+        "dl1": {
+            "nsets": "1",
+            "bsize": "16",
+            "assoc": "512",
+            "repl": "l"
+        },
+        "ul2": {
+            "nsets": "1",
+            "bsize": "128",
+            "assoc": "4096",
+            "repl": "l"
+        },
+        "benchmark": "Benchmarks/go/go.ss Benchmarks/go/2stone9.in"
+    }
+]

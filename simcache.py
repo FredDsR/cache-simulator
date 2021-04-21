@@ -144,6 +144,7 @@ def run_experiment(config: dict) -> pd.DataFrame:
     experiment_df = pd.DataFrame()
 
     for i, simulation_config in enumerate(config):
+        print(f'Running simulation {i}')
         simulation_df = run_simulation(simulation_config)
         simulation_df['label'] = 'simulation_' + str(i)
         experiment_df = pd.concat([experiment_df, simulation_df])
@@ -157,9 +158,13 @@ def get_experiments_config() -> dict:
 
     experiments_config = {}
 
+    json_pattern = r'.+\.json'
+
     for i, config_file in enumerate(abs_config_files):
-        with open(config_file, 'r', encoding='utf-8') as file:
-            experiments_config[config_files[i]] = json.load(file)
+        if re.match(json_pattern, config_file):
+            print(f'Reading file: {config_file}')
+            with open(config_file, 'r', encoding='utf-8') as file:
+                experiments_config[config_files[i]] = json.load(file)
 
     return experiments_config
 
@@ -168,6 +173,8 @@ def main() -> None:
 
     for key in experiments_config.keys():
         
+        print(f'Running experiment {key}')
+
         df = run_experiment(experiments_config[key])
         
         if 'results' not in os.listdir('./'):

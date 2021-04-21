@@ -1,0 +1,274 @@
+[
+    {
+        "il1": {
+            "nsets": "3072",
+            "bsize": "8",
+            "assoc": "1",
+            "repl": "l"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "3072",
+            "bsize": "8",
+            "assoc": "1",
+            "repl": "l"
+        },
+        "dl2": null,
+        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/jump.i"
+    },
+    {
+        "il1": {
+            "nsets": "2048",
+            "bsize": "16",
+            "assoc": "1",
+            "repl": "l"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "2048",
+            "bsize": "16",
+            "assoc": "1",
+            "repl": "l"
+        },
+        "dl2": null,
+        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/jump.i"
+    },
+    {
+        "il1": {
+            "nsets": "1024",
+            "bsize": "32",
+            "assoc": "1",
+            "repl": "l"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "1024",
+            "bsize": "32",
+            "assoc": "1",
+            "repl": "l"
+        },
+        "dl2": null,
+        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/jump.i"
+    },
+    {
+        "il1": {
+            "nsets": "512",
+            "bsize": "64",
+            "assoc": "1",
+            "repl": "l"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "512",
+            "bsize": "64",
+            "assoc": "1",
+            "repl": "l"
+        },
+        "dl2": null,
+        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/jump.i"
+    },
+    {
+        "il1": {
+            "nsets": "768",
+            "bsize": "8",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "768",
+            "bsize": "8",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "dl2": null,
+        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/jump.i"
+    },
+    {
+        "il1": {
+            "nsets": "512",
+            "bsize": "16",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "512",
+            "bsize": "16",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "dl2": null,
+        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/jump.i"
+    },
+    {
+        "il1": {
+            "nsets": "256",
+            "bsize": "32",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "256",
+            "bsize": "32",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "dl2": null,
+        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/jump.i"
+    },
+    {
+        "il1": {
+            "nsets": "128",
+            "bsize": "64",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "128",
+            "bsize": "64",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "dl2": null,
+        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/jump.i"
+    },
+    {
+        "il1": {
+            "nsets": "3072",
+            "bsize": "8",
+            "assoc": "1",
+            "repl": "l"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "3072",
+            "bsize": "8",
+            "assoc": "1",
+            "repl": "l"
+        },
+        "dl2": null,
+        "benchmark": "Benchmarks/go/go.ss Benchmarks/go/2stone9.in"
+    },
+    {
+        "il1": {
+            "nsets": "2048",
+            "bsize": "16",
+            "assoc": "1",
+            "repl": "l"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "2048",
+            "bsize": "16",
+            "assoc": "1",
+            "repl": "l"
+        },
+        "dl2": null,
+        "benchmark": "Benchmarks/go/go.ss Benchmarks/go/2stone9.in"
+    },
+    {
+        "il1": {
+            "nsets": "1024",
+            "bsize": "32",
+            "assoc": "1",
+            "repl": "l"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "1024",
+            "bsize": "32",
+            "assoc": "1",
+            "repl": "l"
+        },
+        "dl2": null,
+        "benchmark": "Benchmarks/go/go.ss Benchmarks/go/2stone9.in"
+    },
+    {
+        "il1": {
+            "nsets": "512",
+            "bsize": "64",
+            "assoc": "1",
+            "repl": "l"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "512",
+            "bsize": "64",
+            "assoc": "1",
+            "repl": "l"
+        },
+        "dl2": null,
+        "benchmark": "Benchmarks/go/go.ss Benchmarks/go/2stone9.in"
+    },
+    {
+        "il1": {
+            "nsets": "768",
+            "bsize": "8",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "768",
+            "bsize": "8",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "dl2": null,
+        "benchmark": "Benchmarks/go/go.ss Benchmarks/go/2stone9.in"
+    },
+    {
+        "il1": {
+            "nsets": "512",
+            "bsize": "16",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "512",
+            "bsize": "16",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "dl2": null,
+        "benchmark": "Benchmarks/go/go.ss Benchmarks/go/2stone9.in"
+    },
+    {
+        "il1": {
+            "nsets": "256",
+            "bsize": "32",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "256",
+            "bsize": "32",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "dl2": null,
+        "benchmark": "Benchmarks/go/go.ss Benchmarks/go/2stone9.in"
+    },
+    {
+        "il1": {
+            "nsets": "128",
+            "bsize": "64",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "128",
+            "bsize": "64",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "dl2": null,
+        "benchmark": "Benchmarks/go/go.ss Benchmarks/go/2stone9.in"
+    }
+]

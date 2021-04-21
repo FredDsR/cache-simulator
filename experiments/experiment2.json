@@ -1,24 +1,104 @@
 [
     {
-        "ul1": {
-            "nsets": "128",
-            "bsize": "64",
-            "assoc": "1",
+        "il1": {
+            "nsets": "1",
+            "bsize": "32",
+            "assoc": "1024",
             "repl": "l"
         },
         "il2": null,
+        "dl1": {
+            "nsets": "1",
+            "bsize": "32",
+            "assoc": "1024",
+            "repl": "l"
+        },
         "dl2": null,
-        "benchmark": "Benchmarks/go/go.ss 50 9 Benchmarks/go/2stone9.in"
+        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/jump.i"
     },
     {
-        "ul1": {
-            "nsets": "64",
+        "il1": {
+            "nsets": "1",
             "bsize": "32",
-            "assoc": "1",
+            "assoc": "1024",
+            "repl": "f"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "1",
+            "bsize": "32",
+            "assoc": "1024",
+            "repl": "f"
+        },
+        "dl2": null,
+        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/jump.i"
+    },
+    {
+        "il1": {
+            "nsets": "1",
+            "bsize": "32",
+            "assoc": "1024",
+            "repl": "r"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "1",
+            "bsize": "32",
+            "assoc": "1024",
+            "repl": "r"
+        },
+        "dl2": null,
+        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/jump.i"
+    },
+    {
+        "il1": {
+            "nsets": "1",
+            "bsize": "32",
+            "assoc": "1024",
             "repl": "l"
         },
         "il2": null,
+        "dl1": {
+            "nsets": "1",
+            "bsize": "32",
+            "assoc": "1024",
+            "repl": "l"
+        },
         "dl2": null,
-        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/gcc.i"
+        "benchmark": "Benchmarks/go/go.ss Benchmarks/go/2stone9.in"
+    },
+    {
+        "il1": {
+            "nsets": "1",
+            "bsize": "32",
+            "assoc": "1024",
+            "repl": "f"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "1",
+            "bsize": "32",
+            "assoc": "1024",
+            "repl": "f"
+        },
+        "dl2": null,
+        "benchmark": "Benchmarks/go/go.ss Benchmarks/go/2stone9.in"
+    },
+    {
+        "il1": {
+            "nsets": "1",
+            "bsize": "32",
+            "assoc": "1024",
+            "repl": "r"
+        },
+        "il2": null,
+        "dl1": {
+            "nsets": "1",
+            "bsize": "32",
+            "assoc": "1024",
+            "repl": "r"
+        },
+        "dl2": null,
+        "benchmark": "Benchmarks/go/go.ss Benchmarks/go/2stone9.in"
     }
 ]
