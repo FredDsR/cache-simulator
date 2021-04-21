@@ -27,7 +27,7 @@ def clean_stats(raw_stats: str) -> dict:
     return stats_dict
 
 def get_stats(stats: dict, config: dict) -> pd.DataFrame:
-    new_dict = {'type': [],
+    new_dict = {'cache': [],
                 'nsets': [],
                 'bsize': [],
                 'assoc': [],
@@ -42,7 +42,11 @@ def get_stats(stats: dict, config: dict) -> pd.DataFrame:
                 'miss_rate': [],
                 'repl_rate': [],
                 'wb_rate': [],
-                'inv_rate': []}
+                'inv_rate': [],
+                'sim_num_insn': [],
+                'sim_num_refs': [],
+                'sim_elapsed_time': [],
+                'sim_inst_rate': []} 
 
     types = config.keys()
 
@@ -50,22 +54,28 @@ def get_stats(stats: dict, config: dict) -> pd.DataFrame:
     
     for key in stats.keys():
         splited_key = key.split('.')
-        type = splited_key[0]
-        if type in types:
+        cache = splited_key[0]
+        if cache in types:
             new_key = splited_key[1]
             new_dict[new_key].append(stats[key])
-            if type not in new_dict['type']:
-                new_dict['type'].append(type)
-                new_dict['nsets'].append(config[type]['nsets'])
-                new_dict['bsize'].append(config[type]['bsize'])
-                new_dict['assoc'].append(config[type]['assoc'])
-                new_dict['repl'].append(config[type]['repl'])
+            if cache not in new_dict['cache']:
+                new_dict['cache'].append(cache)
+                new_dict['nsets'].append(config[cache]['nsets'])
+                new_dict['bsize'].append(config[cache]['bsize'])
+                new_dict['assoc'].append(config[cache]['assoc'])
+                new_dict['repl'].append(config[cache]['repl'])
 
                 benchmark_files = [benchmark.split('/')[-1] 
                                    for benchmark in config['benchmark'].split(' ') 
                                    if re.match(file_pattern, benchmark)]  
 
                 new_dict['benchmark'].append('_'.join(benchmark_files))
+
+                new_dict['sim_num_insn'].append(stats['sim_num_insn'])
+                new_dict['sim_num_refs'].append(stats['sim_num_refs'])
+                new_dict['sim_elapsed_time'].append(stats['sim_elapsed_time'])
+                new_dict['sim_inst_rate'].append(stats['sim_inst_rate'])
+
 
     return pd.DataFrame().from_dict(new_dict)
 

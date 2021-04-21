@@ -89,14 +89,57 @@ Caso queira utilizar uma cache com algum nível unificado basta utilizar a segui
 
 **Importante: Perceba que no segundo exemplo de configuração são utilizados dois benchmarks diferentes, isso pode ser feito sem problemas pois seá expecificado o benchmark utilizado na simulação. Porém, é importante os arquivos utilizados no benchmark estarem na pasta raiz do programa *sim-cache***
 
-## Saída experada
+## Saída esperada
 
 Para o primeiro exemplo de experimento, a saída esperada é um arquivo *.csv* que deve seguir este padrão:
 
 ```
-type, nsets, bsize, assoc, repl, benchmark,    accesses, hits,     misses,  replacements, writebacks, invalidations, miss_rate, repl_rate, wb_rate, inv_rate, label
-il1,  64,    64,    1,     l,    cc1.ss_gcc.i, 45397813, 41158668, 4239145, 4239081,      0,          0,             0.0934,    0.0934,    0.0000,  0.0000,   simulation_0
-dl1,  64,    64,    1,     l,    cc1.ss_gcc.i, 16934051, 15625167, 1308884, 1308820,      463272,     0,             0.0773,    0.0773,    0.0274,  0.0000,   simulation_0
-il1,  32,    32,    1,     l,    cc1.ss_gcc.i, 45397813, 36511502, 8886311, 8886279,      0,          0,             0.1957,    0.1957,    0.0000,  0.0000,   simulation_1
-dl1,  32,    32,    1,     l,    cc1.ss_gcc.i, 16934051, 14005642, 2928409, 2928377,      1194355,    0,             0.1729,    0.1729,    0.0705,  0.0000,   simulation_1
+cache ,nsets ,bsize ,assoc ,repl ,benchmark    ,accesses ,hits     ,misses  ,replacements ,writebacks ,invalidations ,miss_rate ,repl_rate ,wb_rate ,inv_rate ,sim_num_insn ,sim_num_refs ,sim_elapsed_time ,sim_inst_rate ,label
+il1   ,64    ,64    ,1     ,l    ,cc1.ss_gcc.i ,45397813 ,41158668 ,4239145 ,4239081      ,0          ,0             ,0.0934    ,0.0934    ,0.0000  ,0.0000   ,45397813     ,16803484     ,2                ,22698906.5000 ,simulation_0
+dl1   ,64    ,64    ,1     ,l    ,cc1.ss_gcc.i ,16934051 ,15624209 ,1309842 ,1309778      ,463333     ,0             ,0.0773    ,0.0773    ,0.0274  ,0.0000   ,45397813     ,16803484     ,2                ,22698906.5000 ,simulation_0
+il1   ,32    ,32    ,1     ,l    ,cc1.ss_gcc.i ,45397813 ,36511502 ,8886311 ,8886279      ,0          ,0             ,0.1957    ,0.1957    ,0.0000  ,0.0000   ,45397813     ,16803484     ,2                ,22698906.5000 ,simulation_1
+dl1   ,32    ,32    ,1     ,l    ,cc1.ss_gcc.i ,16934051 ,14004609 ,2929442 ,2929410      ,1194464    ,0             ,0.1730    ,0.1730    ,0.0705  ,0.0000   ,45397813     ,16803484     ,2                ,22698906.5000 ,simulation_1
 ```
+Onde cada campo significa:
+
+cache
+
+* **nsets**: Quantidade de conjuntos;
+
+* **bsize**: Tamanho do bloco;
+
+* **assoc**: Nível de associação;
+
+* **repl**: Política de substituição
+
+* **benchmark**: Identificador do benchmark utilizado (concatenação dos arquivos de benchmark);
+
+* **accesses**: Número total de acessos;
+
+* **hits**: Número total de hits;
+
+* **misses**: Número total de misses;
+
+* **replacements**: Número total de substituições;
+
+* **writebacks**: Número total de writebacks;
+
+* **invalidations**: Número total de invalidações;
+
+* **miss_rate**: Taxa de perda;
+
+* **repl_rate**: Taxa de substituições;
+
+* **wb_rate**: Taxa de writebacks;
+
+* **inv_rate**: Taxa de invalidações;
+
+* **sim_num_insn**: Número total de instruções executadas;
+
+* **sim_num_refs**: Número total de loads e stores;
+
+* **sim_elapsed_time**: Tempo total da simulação em segundos;
+
+* **sim_inst_rate**: Velocidade da simulação (intruções/seg);
+
+* **label**: Identificador da simulação.
