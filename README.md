@@ -15,7 +15,8 @@ Tendo o repositório clonado, basta rodar os comandos `pipenv install` e `pipenv
 Para rodar basta adicionar a configuração desejada à pasta **experiments/** atravéz de um arquivo *.json* e executar o comando `python simcache.py`. Depois disso o script gerará os resultados na pasta **results/**.
 
 ## Configuração
-O arquivo de configuração tem a seguinte estrutura:
+
+Um ponto importante a ser levado em consideração é a estrutura do arquivo *csv* de saída, para evitar dados sem centexto entre si, recomendo que seja utilizado somente um arquivo de configuração paraa cada experimento a ser avaliado, pois assim é garantido que todos os dados extraídos das simulações tenham o mesmo contexto. O arquivo de configuração tem a seguinte estrutura:
 
 ```
 [
@@ -87,7 +88,7 @@ Caso queira utilizar uma cache com algum nível unificado basta utilizar a segui
 ]
 ```
 
-**Importante: Perceba que no segundo exemplo de configuração são utilizados dois benchmarks diferentes, isso pode ser feito sem problemas pois seá expecificado o benchmark utilizado na simulação. Porém, é importante os arquivos utilizados no benchmark estarem na pasta raiz do programa *sim-cache***
+**Importante: Perceba que no segundo exemplo de configuração são utilizados dois benchmarks diferentes, isso pode ser feito sem problemas pois será expecificado o benchmark utilizado em cada simulação. Porém, é importante os arquivos utilizados no benchmark estarem na pasta raiz do programa *sim-cache***
 
 ## Saída esperada
 
