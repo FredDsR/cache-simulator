@@ -9,10 +9,10 @@ Para instalar é necessário ter uma versão do *Python* instalada (sugiro utili
 ### Comandos
 Depois dos pré-requisitos devidamente instalados, é necessário clonar este projeto na sua máquina, que pode ser feito rodando o comando `git clone https://github.com/FredDsR/cache-simulator.git`.
 
-Tendo o repositório clonado, basta rodar os comandos `pipenv install` e `pipenv run python simcache.py`
+Tendo o repositório clonado, basta rodar os comandos `pipenv install`.
 
 ## Utilização
-Para rodar basta adicionar a configuração desejada à pasta **experiments/** atravéz de um arquivo *.json* e executar o comando `python simcache.py`. Depois disso o script gerará os resultados na pasta **results/**.
+Para rodar basta adicionar a configuração desejada à pasta **experiments/** atravéz de um arquivo *.json* e executar o comando `pipenv run python simcache.py`. Depois disso o script gerará os resultados na pasta **results/**.
 
 ## Configuração
 
