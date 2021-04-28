@@ -1,96 +1,96 @@
 [
     {
         "il1": {
-            "nsets": "1",
-            "bsize": "16",
-            "assoc": "512",
-            "repl": "l"
-        },
-        "il2": {
-            "nsets": "1",
+            "nsets": "512",
             "bsize": "64",
-            "assoc": "2048",
+            "assoc": "4",
             "repl": "l"
         },
         "dl1": {
-            "nsets": "1",
-            "bsize": "16",
-            "assoc": "512",
-            "repl": "l"
-        },
-        "dl2": {
-            "nsets": "1",
+            "nsets": "512",
             "bsize": "64",
-            "assoc": "2048",
-            "repl": "l"
-        },
-        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/jump.i"
-    },
-    {
-        "il1": {
-            "nsets": "1",
-            "bsize": "16",
-            "assoc": "512",
-            "repl": "l"
-        },
-        "dl1": {
-            "nsets": "1",
-            "bsize": "16",
-            "assoc": "512",
+            "assoc": "4",
             "repl": "l"
         },
         "ul2": {
-            "nsets": "1",
-            "bsize": "128",
-            "assoc": "4096",
+            "nsets": "1024",
+            "bsize": "64",
+            "assoc": "4",
             "repl": "l"
         },
         "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/jump.i"
     },
     {
         "il1": {
-            "nsets": "1",
+            "nsets": "128",
             "bsize": "16",
-            "assoc": "512",
+            "assoc": "4",
             "repl": "l"
         },
         "il2": {
-            "nsets": "1",
+            "nsets": "512",
             "bsize": "64",
-            "assoc": "2048",
+            "assoc": "4",
             "repl": "l"
         },
         "dl1": {
-            "nsets": "1",
+            "nsets": "128",
             "bsize": "16",
-            "assoc": "512",
+            "assoc": "4",
             "repl": "l"
         },
         "dl2": {
-            "nsets": "1",
+            "nsets": "512",
             "bsize": "64",
-            "assoc": "2048",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "benchmark": "Benchmarks/gcc/cc1.ss Benchmarks/gcc/jump.i"
+    },    
+    {
+        "il1": {
+            "nsets": "512",
+            "bsize": "64",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "dl1": {
+            "nsets": "512",
+            "bsize": "64",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "ul2": {
+            "nsets": "1024",
+            "bsize": "64",
+            "assoc": "4",
             "repl": "l"
         },
         "benchmark": "Benchmarks/go/go.ss 50 9 Benchmarks/go/2stone9.in"
     },
     {
         "il1": {
-            "nsets": "1",
+            "nsets": "128",
             "bsize": "16",
-            "assoc": "512",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "il2": {
+            "nsets": "512",
+            "bsize": "64",
+            "assoc": "4",
             "repl": "l"
         },
         "dl1": {
-            "nsets": "1",
+            "nsets": "128",
             "bsize": "16",
-            "assoc": "512",
+            "assoc": "4",
             "repl": "l"
         },
-        "ul2": {
-            "nsets": "1",
-            "bsize": "128",
-            "assoc": "4096",
+        "dl2": {
+            "nsets": "512",
+            "bsize": "64",
+            "assoc": "4",
             "repl": "l"
         },
         "benchmark": "Benchmarks/go/go.ss 50 9 Benchmarks/go/2stone9.in"

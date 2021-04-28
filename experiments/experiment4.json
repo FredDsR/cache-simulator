@@ -1,16 +1,16 @@
 [
     {
         "il1": {
-            "nsets": "1",
-            "bsize": "16",
-            "assoc": "512",
+            "nsets": "256",
+            "bsize": "32",
+            "assoc": "4",
             "repl": "l"
         },
         "il2": null,
         "dl1": {
-            "nsets": "1",
-            "bsize": "16",
-            "assoc": "512",
+            "nsets": "256",
+            "bsize": "32",
+            "assoc": "4",
             "repl": "l"
         },
         "dl2": null,
@@ -18,9 +18,9 @@
     },
     {
         "ul1": {
-            "nsets": "1",
+            "nsets": "512",
             "bsize": "32",
-            "assoc": "1024",
+            "assoc": "4",
             "repl": "l"
         },
         "il2": null,
@@ -29,16 +29,16 @@
     },
     {
         "il1": {
-            "nsets": "1",
-            "bsize": "16",
-            "assoc": "512",
+            "nsets": "256",
+            "bsize": "32",
+            "assoc": "4",
             "repl": "l"
         },
         "il2": null,
         "dl1": {
-            "nsets": "1",
-            "bsize": "16",
-            "assoc": "512",
+            "nsets": "256",
+            "bsize": "32",
+            "assoc": "4",
             "repl": "l"
         },
         "dl2": null,
@@ -46,9 +46,9 @@
     },
     {
         "ul1": {
-            "nsets": "1",
+            "nsets": "512",
             "bsize": "32",
-            "assoc": "1024",
+            "assoc": "4",
             "repl": "l"
         },
         "il2": null,
