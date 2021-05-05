@@ -1,20 +1,20 @@
 [
     {
         "il1": {
-            "nsets": "512",
-            "bsize": "64",
+            "nsets": "64",
+            "bsize": "16",
             "assoc": "4",
             "repl": "l"
         },
         "dl1": {
-            "nsets": "512",
-            "bsize": "64",
+            "nsets": "64",
+            "bsize": "16",
             "assoc": "4",
             "repl": "l"
         },
         "ul2": {
-            "nsets": "1024",
-            "bsize": "64",
+            "nsets": "256",
+            "bsize": "32",
             "assoc": "4",
             "repl": "l"
         },
@@ -22,26 +22,26 @@
     },
     {
         "il1": {
-            "nsets": "128",
+            "nsets": "64",
+            "bsize": "16",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "dl1": {
+            "nsets": "64",
             "bsize": "16",
             "assoc": "4",
             "repl": "l"
         },
         "il2": {
-            "nsets": "512",
-            "bsize": "64",
-            "assoc": "4",
-            "repl": "l"
-        },
-        "dl1": {
             "nsets": "128",
-            "bsize": "16",
+            "bsize": "32",
             "assoc": "4",
             "repl": "l"
         },
         "dl2": {
-            "nsets": "512",
-            "bsize": "64",
+            "nsets": "128",
+            "bsize": "32",
             "assoc": "4",
             "repl": "l"
         },
@@ -49,20 +49,20 @@
     },    
     {
         "il1": {
-            "nsets": "512",
-            "bsize": "64",
+            "nsets": "64",
+            "bsize": "16",
             "assoc": "4",
             "repl": "l"
         },
         "dl1": {
-            "nsets": "512",
-            "bsize": "64",
+            "nsets": "64",
+            "bsize": "16",
             "assoc": "4",
             "repl": "l"
         },
         "ul2": {
-            "nsets": "1024",
-            "bsize": "64",
+            "nsets": "256",
+            "bsize": "32",
             "assoc": "4",
             "repl": "l"
         },
@@ -70,26 +70,26 @@
     },
     {
         "il1": {
-            "nsets": "128",
+            "nsets": "64",
+            "bsize": "16",
+            "assoc": "4",
+            "repl": "l"
+        },
+        "dl1": {
+            "nsets": "64",
             "bsize": "16",
             "assoc": "4",
             "repl": "l"
         },
         "il2": {
-            "nsets": "512",
-            "bsize": "64",
-            "assoc": "4",
-            "repl": "l"
-        },
-        "dl1": {
             "nsets": "128",
-            "bsize": "16",
+            "bsize": "32",
             "assoc": "4",
             "repl": "l"
         },
         "dl2": {
-            "nsets": "512",
-            "bsize": "64",
+            "nsets": "128",
+            "bsize": "32",
             "assoc": "4",
             "repl": "l"
         },
