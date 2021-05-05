@@ -9,13 +9,14 @@ Para instalar é necessário ter uma versão do *Python* instalada (sugiro utili
 ### Comandos
 Depois dos pré-requisitos devidamente instalados, é necessário clonar este projeto na sua máquina, que pode ser feito rodando o comando `git clone https://github.com/FredDsR/cache-simulator.git`.
 
-Tendo o repositório clonado, basta rodar os comandos `pipenv install` e `pipenv run python simcache.py`
+Tendo o repositório clonado, basta rodar os comandos `pipenv install`.
 
 ## Utilização
-Para rodar basta adicionar a configuração desejada à pasta **experiments/** atravéz de um arquivo *.json* e executar o comando `python simcache.py`. Depois disso o script gerará os resultados na pasta **results/**.
+Para rodar basta adicionar a configuração desejada à pasta **experiments/** atravéz de um arquivo *.json* e executar o comando `pipenv run python simcache.py`. Depois disso o script gerará os resultados na pasta **results/**.
 
 ## Configuração
-O arquivo de configuração tem a seguinte estrutura:
+
+Um ponto importante a ser levado em consideração é a estrutura do arquivo *csv* de saída, para evitar dados sem centexto entre si, recomendo que seja utilizado somente um arquivo de configuração paraa cada experimento a ser avaliado, pois assim é garantido que todos os dados extraídos das simulações tenham o mesmo contexto. O arquivo de configuração tem a seguinte estrutura:
 
 ```
 [
@@ -87,7 +88,7 @@ Caso queira utilizar uma cache com algum nível unificado basta utilizar a segui
 ]
 ```
 
-**Importante: Perceba que no segundo exemplo de configuração são utilizados dois benchmarks diferentes, isso pode ser feito sem problemas pois seá expecificado o benchmark utilizado na simulação. Porém, é importante os arquivos utilizados no benchmark estarem na pasta raiz do programa *sim-cache***
+**Importante: Perceba que no segundo exemplo de configuração são utilizados dois benchmarks diferentes, isso pode ser feito sem problemas pois será expecificado o benchmark utilizado em cada simulação. Porém, é importante os arquivos utilizados no benchmark estarem na pasta raiz do programa *sim-cache***
 
 ## Saída esperada
 
@@ -102,7 +103,7 @@ dl1   ,32    ,32    ,1     ,l    ,cc1.ss_gcc.i ,16934051 ,14004609 ,2929442 ,292
 ```
 Onde cada campo significa:
 
-cache
+* **cache**: Identificador do tipo e nível da cache (Ex.: *il1*, *dl1*, etc...);
 
 * **nsets**: Quantidade de conjuntos;
 
